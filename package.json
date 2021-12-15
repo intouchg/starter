@@ -1,0 +1,25 @@
+{
+	"name": "@intouchg/starter",
+	"version": "0.2.0-alpha.3",
+	"description": "CLI for creating new apps with the Intouch Design System",
+	"repository": "https://github.com/intouchg/starter",
+	"author": "Intouch Group",
+	"license": "MIT",
+	"bin": {
+		"intouchg-starter": "./lib/cli.js"
+	},
+	"scripts": {
+		"prepare": "node ./templates.js"
+	},
+	"dependencies": {
+		"chalk": "4.1.2",
+		"commander": "8.3.0",
+		"fast-fuzzy": "1.11.1",
+		"got": "11.8.3",
+		"inquirer": "8.2.0",
+		"inquirer-autocomplete-prompt": "1.4.0",
+		"semver": "7.3.5",
+		"tar": "6.1.11"
+	},
+	"devDependencies": {}
+}

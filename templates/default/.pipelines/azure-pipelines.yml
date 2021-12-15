@@ -1,0 +1,92 @@
+name: $(Build.SourceBranchName).$(BuildID)
+
+trigger:
+    - release/*
+    - '*.*.*'
+    - master
+
+pool:
+    name: IntouchDesignSystem
+
+steps:
+    - checkout: self
+      clean: true
+
+    - task: NodeTool@0
+      displayName: 'Use Node 16.0.0'
+      inputs:
+          versionSpec: 16.0.0
+
+    - script: |
+          npm install --scripts-prepend-node-path=true --verbose --legacy-peer-deps
+
+      displayName: 'npm Install Site Modules'
+
+    - script: |
+          npm run release --scripts-prepend-node-path=true --verbose 
+          REM npm run export --scripts-prepend-node-path=true --verbose
+
+      displayName: 'npm run export'
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive out/style-guide'
+      inputs:
+          rootFolderOrFile: 'out/style-guide'
+          includeRootFolder: false
+          archiveFile: '$(Build.ArtifactStagingDirectory)/style-guide.zip'
+          verbose: true
+      enabled: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: style-guide '
+      inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/style-guide.zip'
+          ArtifactName: 'style-guide'
+      enabled: true
+
+    - task: DeleteFiles@1
+      displayName: 'Delete files from $(Build.ArtifactStagingDirectory) copy'
+      inputs:
+          SourceFolder: 'out/style-guide'
+          Contents: |
+              **
+              *.*
+      enabled: true
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive out'
+      inputs:
+          rootFolderOrFile: out
+          includeRootFolder: false
+          archiveFile: '$(Build.ArtifactStagingDirectory)/WebFolder.zip'
+          verbose: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: WebFolder'
+      inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/WebFolder.zip'
+          ArtifactName: WebFolder
+
+    - task: DeleteFiles@1
+      displayName: 'Delete files from $(Build.ArtifactStagingDirectory)'
+      inputs:
+          SourceFolder: '$(Build.ArtifactStagingDirectory)'
+          Contents: |
+              **
+              *.*
+
+    - task: DeleteFiles@1
+      displayName: 'Delete files from $(Build.BinariesDirectory)'
+      inputs:
+          SourceFolder: '$(Build.BinariesDirectory)'
+          Contents: |
+              **
+              *.*
+
+    - task: DeleteFiles@1
+      displayName: 'Delete files from $(Build.SourcesDirectory)'
+      inputs:
+          SourceFolder: '$(Build.SourcesDirectory)'
+          Contents: |
+              **
+              *.*

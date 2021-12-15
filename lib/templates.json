@@ -1,0 +1,10 @@
+[
+	{
+		"name": "default",
+		"description": "NextJS app using the Intouch Design System"
+	},
+	{
+		"name": "fastify",
+		"description": "NodeJS Fastify server"
+	}
+]

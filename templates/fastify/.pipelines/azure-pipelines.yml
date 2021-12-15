@@ -1,0 +1,67 @@
+name: $(Build.SourceBranchName).$(BuildID)
+
+trigger:
+    - release/*
+    - '*.*.*'
+    - master
+    - multistagePipeline
+
+pool:
+    name: OneIntouch
+
+stages:
+    - stage: MasterBuild
+      displayName: MasterBuild
+      #  dependsOn: string | [ string ]
+      #  condition: and(succeeded(), eq(variables['Build.SourceBranchName'], variables['ImageBuildsOnBranch']))
+      #  variables: # several syntaxes, see specific section
+      jobs:
+          - job: BuildCode
+            displayName: BuildCode
+            #  dependsOn: string | [ string ]
+            #  condition: string
+            #  strategy:
+            #    parallel: # parallel strategy; see the following "Parallel" topic
+            #    matrix: # matrix strategy; see the following "Matrix" topic
+            #    maxParallel: number # maximum number of matrix jobs to run simultaneously
+            #  continueOnError: boolean  # 'true' if future jobs should run even if this job fails; defaults to 'false'
+            pool:
+                name: OneIntouch
+                demands:
+                    - PowerShell
+            workspace:
+                clean: all
+
+            steps:
+                - task: NodeTool@0
+                  displayName: 'Use Node 16.0.0'
+                  inputs:
+                      versionSpec: 16.0.0
+
+                - script: |
+                      npm install --scripts-prepend-node-path=true --verbose --legacy-peer-deps
+
+                  displayName: 'npm Install Site Modules'
+
+                - script: |
+                      npm run release --scripts-prepend-node-path=true --verbose 
+                      REM npm run export --scripts-prepend-node-path=true --verbose
+
+                  displayName: 'npm run export'
+                - task: CopyFiles@2
+                  inputs:
+                      Contents: '.env.**'
+                      TargetFolder: 'env'
+                - task: PublishBuildArtifacts@1
+                  inputs:
+                      PathtoPublish: 'env'
+                      ArtifactName: 'env'
+                      publishLocation: 'Container'
+
+                - template: templates/collect_ids_artifacts.yml
+                  parameters:
+                      pathWebFolder: server
+                      pathArtifactWebfolder: $(Build.ArtifactStagingDirectory)/WebFolder.zip
+                      pathArtifactStyleGuide: $(Build.ArtifactStagingDirectory)/node_modules.zip
+                      pathStyleGuide: node_modules
+                - template: templates/clean_build_server.yml

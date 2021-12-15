@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["client/*"]
+		},
+		"target": "es6",
+		"lib": ["dom", "esnext"],
+		"skipLibCheck": true,
+		"strict": false,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve"
+	},
+	"include": ["client/**/*.ts", "client/**/*.tsx"],
+	"exclude": [".git", ".husky", "node_modules", "out", "build", "public"]
+}

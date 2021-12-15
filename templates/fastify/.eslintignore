@@ -1,0 +1,14 @@
+# Default ignores
+node_modules
+.nvmrc
+.npmrc
+readme.md
+.husky
+out
+build
+public
+client/assets/**
+client/icons/**
+client/theme/**
+webpack.config.js
+server

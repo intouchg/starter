@@ -1,0 +1,14 @@
+node_modules
+readme.md
+webpack.config.js
+next.config.js
+.nvmrc
+.npmrc
+.husky
+.pipelines
+.vscode
+.next
+out
+public
+assets
+icons

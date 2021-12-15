@@ -1,0 +1,20 @@
+steps:
+    - task: DeleteFiles@1
+      displayName: 'Delete files from $(Build.ArtifactStagingDirectory)'
+      inputs:
+          SourceFolder: '$(Build.ArtifactStagingDirectory)'
+          Contents: |
+              **
+              **.**
+              **/**
+              **/**.**
+
+    - task: DeleteFiles@1
+      displayName: 'Delete files from $(Build.BinariesDirectory)'
+      inputs:
+          SourceFolder: '$(Build.BinariesDirectory)'
+          Contents: |
+              **
+              **.**
+              **/**
+              **/**.**

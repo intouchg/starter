@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["client/*"]
+		}
+	},
+	"exclude": [
+		".git",
+		".husky",
+		"node_modules",
+		"out",
+		"build",
+		"public",
+		"server/public"
+	]
+}

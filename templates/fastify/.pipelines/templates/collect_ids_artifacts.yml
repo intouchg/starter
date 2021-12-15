@@ -1,0 +1,60 @@
+parameters:
+    - name: pathWebFolder
+      type: string
+      default: out
+    #${{ parameters.pathWebFolder }}
+    - name: pathStyleGuide
+      type: string
+      default: out/style-guide
+    #${{ parameters.pathStyleGuide }}
+
+    - name: pathArtifactStyleGuide
+      type: string
+      default: '$(Build.ArtifactStagingDirectory)/style-guide.zip'
+    #${{ parameters.pathArtifactStyleGuide }}
+
+    - name: pathArtifactWebfolder
+      type: string
+      default: '$(Build.ArtifactStagingDirectory)/WebFolder.zip'
+#${{ parameters.pathArtifactWebfolder }}
+
+steps:
+    - task: ArchiveFiles@2
+      displayName: 'Archive out/style-guide'
+      inputs:
+          rootFolderOrFile: ${{ parameters.pathStyleGuide }}
+          includeRootFolder: false
+          archiveFile: ${{ parameters.pathArtifactStyleGuide }}
+          verbose: true
+
+      enabled: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: style-guide '
+      inputs:
+          PathtoPublish: ${{ parameters.pathArtifactStyleGuide }}
+          ArtifactName: 'style-guide'
+      enabled: true
+
+    #    - task: DeleteFiles@1
+    #      displayName: 'Delete files from $(Build.ArtifactStagingDirectory) copy'
+    #      inputs:
+    #          SourceFolder: ${{ parameters.pathStyleGuide }}
+    #          Contents: |
+    #              **
+    #              *.*
+    #      enabled: true
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive out'
+      inputs:
+          rootFolderOrFile: ${{ parameters.pathWebFolder }}
+          includeRootFolder: false
+          archiveFile: ${{ parameters.pathArtifactWebfolder }}
+          verbose: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: WebFolder'
+      inputs:
+          PathtoPublish: ${{ parameters.pathArtifactWebfolder }}
+          ArtifactName: WebFolder

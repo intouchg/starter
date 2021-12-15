@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["*"]
+		}
+	},
+	"exclude": [".git", ".next", ".husky", "node_modules", "out"]
+}
