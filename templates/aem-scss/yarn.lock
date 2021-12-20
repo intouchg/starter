@@ -937,6 +937,16 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@intouchg/eslint-config@latest":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@intouchg/eslint-config/-/eslint-config-0.4.0.tgz#10298c3c31b53ba05578f3caf75b44d536536002"
+  integrity sha512-FOiORzCqlVYV24kXywk2ArioocCBAnV0sAvVEc8zeVP3OegsulRssowfB/5wFNExOl1hFM9o85vnTmRKIaKLBQ==
+
+"@intouchg/prettier-config@latest":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@intouchg/prettier-config/-/prettier-config-0.1.0.tgz#2ea394f808c4384a3b509caf1879abb7a67e3a03"
+  integrity sha512-SE3kxKi5yMp4bybOALDbOhutngdDKo6QejJ//qY8HJbabJii6uzTj9CVQFwEyyDJjYsDQcVDk6iASXqhBo5Hew==
+
 "@intouchg/tarot@latest":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@intouchg/tarot/-/tarot-0.0.1.tgz#31c04640105bd7ea9014e8e6bd9215f148ea7e4c"
@@ -4324,6 +4334,11 @@ type-is@~1.6.18:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.24"
+
+typescript@4.5.4:
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.4.tgz#a17d3a0263bf5c8723b9c52f43c5084edf13c2e8"
+  integrity sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
