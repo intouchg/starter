@@ -1,6 +1,6 @@
 {
 	"name": "@intouchg/starter",
-	"version": "0.2.0-alpha.3",
+	"version": "0.2.0-alpha.4",
 	"description": "CLI for creating new apps with the Intouch Design System",
 	"repository": "https://github.com/intouchg/starter",
 	"author": "Intouch Group",
