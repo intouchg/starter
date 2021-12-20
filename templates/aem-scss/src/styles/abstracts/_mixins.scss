@@ -1,0 +1,267 @@
+@mixin media-min ($minWidth) {
+	@media only screen and (min-width: #{$minWidth}) {
+		@content;
+	}
+}
+
+@mixin xxsmall-min () {
+	@include media-min($xxsmall) {
+		@content;
+	}
+}
+
+@mixin xsmall-min () {
+	@include media-min($xsmall) {
+		@content;
+	}
+}
+
+@mixin small-min () {
+	@include media-min($small) {
+		@content;
+	}
+}
+
+@mixin medium-min () {
+	@include media-min($medium) {
+		@content;
+	}
+}
+
+@mixin large-min () {
+	@include media-min($large) {
+		@content;
+	}
+}
+
+@mixin xlarge-min () {
+	@include media-min($xlarge) {
+		@content;
+	}
+}
+
+@mixin media-max ($maxWidth) {
+	@media only screen and (max-width: #{$maxWidth}) {
+		@content;
+	}
+}
+
+@mixin xxsmall-max () {
+	@include media-max($xxsmall) {
+		@content;
+	}
+}
+
+@mixin xsmall-max () {
+	@include media-max($xsmall) {
+		@content;
+	}
+}
+
+@mixin small-max () {
+	@include media-max($small) {
+		@content;
+	}
+}
+
+@mixin medium-max () {
+	@include media-max($medium) {
+		@content;
+	}
+}
+
+@mixin large-max () {
+	@include media-max($large) {
+		@content;
+	}
+}
+
+@mixin xlarge-max () {
+	@include media-max($xlarge) {
+		@content;
+	}
+}
+$xsmall: 375px;
+$small: 600px;
+$medium: 895px;
+$large: 62rem;
+$xlarge: 82rem;
+
+@mixin media-min ($minWidth) {
+	@media only screen and (min-width: #{$minWidth}) {
+		@content;
+	}
+}
+
+@mixin xxsmall-min () {
+	@include media-min($xxsmall) {
+		@content;
+	}
+}
+
+@mixin xsmall-min () {
+	@include media-min($xsmall) {
+		@content;
+	}
+}
+
+@mixin small-min () {
+	@include media-min($small) {
+		@content;
+	}
+}
+
+@mixin medium-min () {
+	@include media-min($medium) {
+		@content;
+	}
+}
+
+@mixin large-min () {
+	@include media-min($large) {
+		@content;
+	}
+}
+
+@mixin xlarge-min () {
+	@include media-min($xlarge) {
+		@content;
+	}
+}
+
+@mixin media-max ($maxWidth) {
+	@media only screen and (max-width: #{$maxWidth}) {
+		@content;
+	}
+}
+
+@mixin xxsmall-max () {
+	@include media-max($xxsmall) {
+		@content;
+	}
+}
+
+@mixin xsmall-max () {
+	@include media-max($xsmall) {
+		@content;
+	}
+}
+
+@mixin small-max () {
+	@include media-max($small) {
+		@content;
+	}
+}
+
+@mixin medium-max () {
+	@include media-max($medium) {
+		@content;
+	}
+}
+
+@mixin large-max () {
+	@include media-max($large) {
+		@content;
+	}
+}
+
+@mixin xlarge-max () {
+	@include media-max($xlarge) {
+		@content;
+	}
+}
+
+@mixin c-mq($key) {
+	$size: map-get($se-breakpoints, $key);
+
+	@if ($size != null) {
+		@media (min-width: $size) {
+			@content;
+		}
+	}
+
+	@if ($size == null) {
+		@content;
+	}
+}
+
+@mixin c-mq-mw($key) {
+	$size: map-get($se-breakpoints, $key);
+
+	@if ($size != null) {
+		@media (max-width: $size) {
+			@content;
+		}
+	}
+
+	@if ($size == null) {
+		@content;
+	}
+}
+
+@mixin custom-mq($size) {
+	@if ($size != null) {
+		@media (min-width: $size) {
+			@content;
+		}
+	}
+
+	@if ($size == null) {
+		@content;
+	}
+}
+
+@mixin custom-mq-mw($size) {
+	@if ($size != null) {
+		@media (max-width: $size) {
+			@content;
+		}
+	}
+
+	@if ($size == null) {
+		@content;
+	}
+}
+
+@mixin sizes ($class-name, $property-map) {
+	.#{$class-name} { @include destructure($property-map); }
+}
+
+@mixin variants ($class-styles) {
+	@each $class-name, $property-map in $class-styles {
+		@include sizes($class-name, $property-map);
+	}
+}
+
+@mixin destructure ($property-map) {
+	@each $property, $value in $property-map {
+		#{$property}: $value;
+	}
+}
+
+@mixin flex-direction($value: row) {
+	@if $value == row-reverse {
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: horizontal;
+	}
+
+	@else if $value == column {
+		-webkit-box-direction: normal;
+		-webkit-box-orient: vertical;
+	}
+
+	@else if $value == column-reverse {
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: vertical;
+	}
+
+	@else {
+		-webkit-box-direction: normal;
+		-webkit-box-orient: horizontal;
+	}
+
+	-webkit-flex-direction: $value;
+	-moz-flex-direction: $value;
+	-ms-flex-direction: $value;
+	flex-direction: $value;
+}

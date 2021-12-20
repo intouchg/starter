@@ -1,0 +1,6 @@
+//* nesting author-specific styles inside of .aem-AuthorLayer-Edit will restrict
+//* styles to the author interface
+
+.aem-AuthorLayer-Edit {
+	margin: 0;
+}

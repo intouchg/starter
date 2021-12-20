@@ -1,0 +1,13 @@
+@import url("https://use.typekit.net/cnb2nkf.css");
+$ff-gothic: century-gothic;
+$ff-gothic: $ff-gothic,	sans-serif;
+
+$ff-matilda: 'FGMatilda';
+
+@font-face {
+	font-family: $ff-matilda;
+	font-display: swap;
+	src: dam('fonts/FGMatilda.otf') format('opentype');
+}
+
+$ff-matilda: $ff-matilda, 'Arial', sans-serif;

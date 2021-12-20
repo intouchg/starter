@@ -1,0 +1,67 @@
+@each $key,
+	$value in $spacing {
+	@include variants((
+		'm#{$key}': (margin: $value !important),
+		'mx#{$key}': (margin-left: $value !important, margin-right: $value !important),
+		'my#{$key}': (margin-top: $value !important, margin-bottom: $value !important),
+		'mt#{$key}': (margin-top: $value !important),
+		'mb#{$key}': (margin-bottom: $value !important),
+		'mr#{$key}': (margin-right: $value !important),
+		'ml#{$key}': (margin-left: $value !important),
+		'p#{$key}': (padding: $value $value !important),
+		'px#{$key}': (padding-left: $value !important, padding-right: $value !important),
+		'py#{$key}': (padding-top: $value !important, padding-bottom: $value !important),
+		'pt#{$key}': (padding-top: $value !important),
+		'pb#{$key}': (padding-bottom: $value !important),
+		'pr#{$key}': (padding-right: $value !important),
+		'pl#{$key}': (padding-left: $value !important)
+	));
+}
+
+@include variants((
+	'm-auto': (margin: auto !important),
+	'mx-auto': (margin-left: auto !important, margin-right: auto !important),
+	'my-auto': (margin-top: auto !important, margin-bottom: auto !important),
+	'mt-auto': (margin-top: auto !important),
+	'mb-auto': (margin-bottom: auto !important),
+	'mr-auto': (margin-right: auto !important),
+	'ml-auto': (margin-left: auto !important),
+));
+
+/* -- Media Generator -- */
+
+@each $mw in $all-mw {
+	.mw-#{$mw} {
+		@include c-mq(lg) {
+			max-width: map-get($mw-sizes, $mw) !important;
+		}
+	}
+}
+
+/* -- Color Utility Class Generator -- */
+
+/* Generate Utility classes to assign color variables to backgrounds or text */
+
+@each $name,
+	$hex in $colors {
+	// Background color
+	.background-color__#{$name} {
+		background-color: $hex;
+	}
+	// Font color
+	.text-#{$name} {
+		color: $hex;
+
+		p {
+			color: $hex;
+		}
+
+		a {
+			color: $hex;
+		}
+	}
+	// SVG color
+	.#{$name}-fill {
+		background-color: $hex;
+	}
+}

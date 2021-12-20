@@ -4,6 +4,10 @@
 		"description": "NextJS app using the Intouch Design System"
 	},
 	{
+		"name": "aem-scss",
+		"description": "SCSS + JS config for AEM with Tarot @intouchg/tarot"
+	},
+	{
 		"name": "fastify",
 		"description": "NodeJS Fastify server"
 	}

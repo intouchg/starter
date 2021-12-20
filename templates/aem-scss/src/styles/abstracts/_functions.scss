@@ -1,0 +1,15 @@
+/* Point to dam relative to local development in Resource Override or compiled file in the dam */
+
+/* `yarn dev` sets $env to "development" */
+
+/* `yarn start` and `yarn build` sets $env to "production" */
+
+@function dam($file, $base: '/content/dam/mywebsite') {
+	$host: '';
+
+	@if $env=='dev' {
+		$host: 'https://AEM_PROD_DOMAIN.adobecqms.net';
+	}
+
+	@return url($host + $base + '/' + $file);
+}
