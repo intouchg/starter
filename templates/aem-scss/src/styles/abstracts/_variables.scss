@@ -61,32 +61,32 @@ $spacing: (
 	8: $spc8,
 	9: $spc9,
 	10: $spc10,
-	11: $spc11
+	11: $spc11,
 );
 
 $colors: (
-	"plum": #95004d,
-	"bronze": #9b7a69,
-	"text": #333,
-	"factcard": #e1d7d2,
-	"white": #fff,
-	"light-gray": #f7f7f7,
-	"medium-gray": #dfdfdf,
-	"gray": #d1d3d4,
-	"dark-gray": #58595b,
-	"dark-blue": #001d49
+	'plum': #95004d,
+	'bronze': #9b7a69,
+	'text': #333,
+	'factcard': #e1d7d2,
+	'white': #fff,
+	'light-gray': #f7f7f7,
+	'medium-gray': #dfdfdf,
+	'gray': #d1d3d4,
+	'dark-gray': #58595b,
+	'dark-blue': #001d49,
 );
 
-$plum: map-get($colors, "plum");
-$bronze: map-get($colors, "bronze");
-$text: map-get($colors, "text");
-$factcard: map-get($colors, "factcard");
-$white: map-get($colors, "white");
-$light-gray: map-get($colors, "light-gray");
-$medium-gray: map-get($colors, "medium-gray");
-$gray: map-get($colors, "gray");
-$dark-gray: map-get($colors, "dark-gray");
-$dark-blue: map-get($colors, "dark-blue");
+$plum: map-get($colors, 'plum');
+$bronze: map-get($colors, 'bronze');
+$text: map-get($colors, 'text');
+$factcard: map-get($colors, 'factcard');
+$white: map-get($colors, 'white');
+$light-gray: map-get($colors, 'light-gray');
+$medium-gray: map-get($colors, 'medium-gray');
+$gray: map-get($colors, 'gray');
+$dark-gray: map-get($colors, 'dark-gray');
+$dark-blue: map-get($colors, 'dark-blue');
 
 /*
 	! Concern:

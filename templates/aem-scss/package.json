@@ -16,6 +16,8 @@
 		"@babel/eslint-parser": "7.16.5",
 		"@babel/eslint-plugin": "7.16.5",
 		"@babel/preset-env": "7.16.5",
+		"@intouchg/eslint-config": "latest",
+		"@intouchg/prettier-config": "latest",
 		"@intouchg/tarot": "latest",
 		"@typescript-eslint/eslint-plugin": "5.8.0",
 		"@typescript-eslint/parser": "5.8.0",

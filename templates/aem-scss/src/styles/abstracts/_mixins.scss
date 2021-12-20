@@ -1,82 +1,82 @@
-@mixin media-min ($minWidth) {
+@mixin media-min($minWidth) {
 	@media only screen and (min-width: #{$minWidth}) {
 		@content;
 	}
 }
 
-@mixin xxsmall-min () {
+@mixin xxsmall-min() {
 	@include media-min($xxsmall) {
 		@content;
 	}
 }
 
-@mixin xsmall-min () {
+@mixin xsmall-min() {
 	@include media-min($xsmall) {
 		@content;
 	}
 }
 
-@mixin small-min () {
+@mixin small-min() {
 	@include media-min($small) {
 		@content;
 	}
 }
 
-@mixin medium-min () {
+@mixin medium-min() {
 	@include media-min($medium) {
 		@content;
 	}
 }
 
-@mixin large-min () {
+@mixin large-min() {
 	@include media-min($large) {
 		@content;
 	}
 }
 
-@mixin xlarge-min () {
+@mixin xlarge-min() {
 	@include media-min($xlarge) {
 		@content;
 	}
 }
 
-@mixin media-max ($maxWidth) {
+@mixin media-max($maxWidth) {
 	@media only screen and (max-width: #{$maxWidth}) {
 		@content;
 	}
 }
 
-@mixin xxsmall-max () {
+@mixin xxsmall-max() {
 	@include media-max($xxsmall) {
 		@content;
 	}
 }
 
-@mixin xsmall-max () {
+@mixin xsmall-max() {
 	@include media-max($xsmall) {
 		@content;
 	}
 }
 
-@mixin small-max () {
+@mixin small-max() {
 	@include media-max($small) {
 		@content;
 	}
 }
 
-@mixin medium-max () {
+@mixin medium-max() {
 	@include media-max($medium) {
 		@content;
 	}
 }
 
-@mixin large-max () {
+@mixin large-max() {
 	@include media-max($large) {
 		@content;
 	}
 }
 
-@mixin xlarge-max () {
+@mixin xlarge-max() {
 	@include media-max($xlarge) {
 		@content;
 	}
@@ -87,85 +87,85 @@ $medium: 895px;
 $large: 62rem;
 $xlarge: 82rem;
 
-@mixin media-min ($minWidth) {
+@mixin media-min($minWidth) {
 	@media only screen and (min-width: #{$minWidth}) {
 		@content;
 	}
 }
 
-@mixin xxsmall-min () {
+@mixin xxsmall-min() {
 	@include media-min($xxsmall) {
 		@content;
 	}
 }
 
-@mixin xsmall-min () {
+@mixin xsmall-min() {
 	@include media-min($xsmall) {
 		@content;
 	}
 }
 
-@mixin small-min () {
+@mixin small-min() {
 	@include media-min($small) {
 		@content;
 	}
 }
 
-@mixin medium-min () {
+@mixin medium-min() {
 	@include media-min($medium) {
 		@content;
 	}
 }
 
-@mixin large-min () {
+@mixin large-min() {
 	@include media-min($large) {
 		@content;
 	}
 }
 
-@mixin xlarge-min () {
+@mixin xlarge-min() {
 	@include media-min($xlarge) {
 		@content;
 	}
 }
 
-@mixin media-max ($maxWidth) {
+@mixin media-max($maxWidth) {
 	@media only screen and (max-width: #{$maxWidth}) {
 		@content;
 	}
 }
 
-@mixin xxsmall-max () {
+@mixin xxsmall-max() {
 	@include media-max($xxsmall) {
 		@content;
 	}
 }
 
-@mixin xsmall-max () {
+@mixin xsmall-max() {
 	@include media-max($xsmall) {
 		@content;
 	}
 }
 
-@mixin small-max () {
+@mixin small-max() {
 	@include media-max($small) {
 		@content;
 	}
 }
 
-@mixin medium-max () {
+@mixin medium-max() {
 	@include media-max($medium) {
 		@content;
 	}
 }
 
-@mixin large-max () {
+@mixin large-max() {
 	@include media-max($large) {
 		@content;
 	}
 }
 
-@mixin xlarge-max () {
+@mixin xlarge-max() {
 	@include media-max($xlarge) {
 		@content;
 	}
@@ -223,17 +223,19 @@ $xlarge: 82rem;
 	}
 }
 
-@mixin sizes ($class-name, $property-map) {
-	.#{$class-name} { @include destructure($property-map); }
+@mixin sizes($class-name, $property-map) {
+	.#{$class-name} {
+		@include destructure($property-map);
+	}
 }
 
-@mixin variants ($class-styles) {
+@mixin variants($class-styles) {
 	@each $class-name, $property-map in $class-styles {
 		@include sizes($class-name, $property-map);
 	}
 }
 
-@mixin destructure ($property-map) {
+@mixin destructure($property-map) {
 	@each $property, $value in $property-map {
 		#{$property}: $value;
 	}
@@ -243,19 +245,13 @@ $xlarge: 82rem;
 	@if $value == row-reverse {
 		-webkit-box-direction: reverse;
 		-webkit-box-orient: horizontal;
-	}
-
-	@else if $value == column {
+	} @else if $value == column {
 		-webkit-box-direction: normal;
 		-webkit-box-orient: vertical;
-	}
-
-	@else if $value == column-reverse {
+	} @else if $value == column-reverse {
 		-webkit-box-direction: reverse;
 		-webkit-box-orient: vertical;
-	}
-
-	@else {
+	} @else {
 		-webkit-box-direction: normal;
 		-webkit-box-orient: horizontal;
 	}
