@@ -25,6 +25,7 @@ Templates also support an optional `template.js` file in the root of the templat
 
 ### Template requirements
 
+* Must contain a yarn.lock file in the template root
 * Must contain a readme.md file in the template root which contains a string `[PROJECT NAME]` that will be replaced when boostrapping the app
 * Must contain a package.json file in the template root which contains a `"description"` property that will be displayed alongside the name of the template in the CLI
 * The template package.json file may include any other properties. When using the CLI to bootstrap a new project, all properties will be carried over into the new project package.json file - except the following properties, which are rewritten: `name`, `version`, `private`, `description`, `repository`, `author`, and `license`

@@ -18,6 +18,7 @@ const addValidationError = (error) => validationErrors += `${validationErrors ? 
 const validateTemplate = (templateName, templatePath) => {
 	const packageJsonPath = path.join(templatePath, 'package.json')
 	const readmePath = path.join(templatePath, 'readme.md')
+	const yarnLockPath = path.join(templatePath, 'yarn.lock')
 
 	let errorList = ''
 	const addErrorListItem = (error) => errorList += `${errorList ? '\n' : ''}  ${error}`
@@ -27,6 +28,9 @@ const validateTemplate = (templateName, templatePath) => {
 
 	if (!fs.existsSync(readmePath))
 		addErrorListItem(`* readme.md must exist`)
+
+	if (!fs.existsSync(yarnLockPath))
+		addErrorListItem(`* yarn.lock must exist`)
 
 	const packageJson = require(packageJsonPath)
 	const readme = fs.readFileSync(readmePath).toString()
