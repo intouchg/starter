@@ -69,6 +69,10 @@ if (validationErrors) {
 	process.exit(1)
 }
 
+const defaultIndex = templates.findIndex((template) => template.name === 'default')
+const orderedTemplates = templates.filter((template, index) => index !== defaultIndex)
+orderedTemplates.unshift(templates[defaultIndex])
+
 const jsonPath = path.join(__dirname, 'lib', 'templates.json')
 
-fs.writeFileSync(jsonPath, JSON.stringify(templates, null, '\t'))
+fs.writeFileSync(jsonPath, JSON.stringify(orderedTemplates, null, '\t'))
