@@ -1,0 +1,5 @@
+node_modules
+.nvmrc
+.npmrc
+readme.md
+.husky
