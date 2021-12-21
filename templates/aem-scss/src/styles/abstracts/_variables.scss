@@ -5,7 +5,7 @@ $medium: 768px;
 $large: 992px;
 $xlarge: 1224px;
 
-//Treatment Support Custom Breakpoints
+// Treatment Support Custom Breakpoints
 $se-breakpoints: (
 	none: null,
 	sm: 601px,
@@ -15,7 +15,7 @@ $se-breakpoints: (
 	nav-desktop: 895px,
 );
 
-//Treatment Support spacing
+// Treatment Support spacing
 $mw-sizes: (
 	12: 100%,
 	11: 11 / 12 * 100%,
@@ -29,12 +29,11 @@ $mw-sizes: (
 	3: 3 / 12 * 100%,
 	2: 2 / 12 * 100%,
 );
-
 $all-mw: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 
-//? Is above content needed?
-//* This seems to be used for a simulated 12-column grid.
-//* I inherited this but never used it. Would also be removed from /base/_utilities.scss
+// Is above content needed?
+// This seems to be used for a simulated 12-column grid.
+// I inherited this but never used it. Would also be removed from /base/_utilities.scss
 
 $spc0: 0;
 $spc1: 4px;
@@ -48,7 +47,6 @@ $spc8: 64px;
 $spc9: 96px;
 $spc10: 128px;
 $spc11: 256px;
-
 $spacing: (
 	0: $spc0,
 	1: $spc1,
@@ -63,7 +61,6 @@ $spacing: (
 	10: $spc10,
 	11: $spc11,
 );
-
 $colors: (
 	'plum': #95004d,
 	'bronze': #9b7a69,
@@ -76,17 +73,16 @@ $colors: (
 	'dark-gray': #58595b,
 	'dark-blue': #001d49,
 );
-
-$plum: map-get($colors, 'plum');
-$bronze: map-get($colors, 'bronze');
-$text: map-get($colors, 'text');
-$factcard: map-get($colors, 'factcard');
-$white: map-get($colors, 'white');
-$light-gray: map-get($colors, 'light-gray');
-$medium-gray: map-get($colors, 'medium-gray');
-$gray: map-get($colors, 'gray');
-$dark-gray: map-get($colors, 'dark-gray');
-$dark-blue: map-get($colors, 'dark-blue');
+$plum: map.get($colors, 'plum');
+$bronze: map.get($colors, 'bronze');
+$text: map.get($colors, 'text');
+$factcard: map.get($colors, 'factcard');
+$white: map.get($colors, 'white');
+$light-gray: map.get($colors, 'light-gray');
+$medium-gray: map.get($colors, 'medium-gray');
+$gray: map.get($colors, 'gray');
+$dark-gray: map.get($colors, 'dark-gray');
+$dark-blue: map.get($colors, 'dark-blue');
 
 /*
 	! Concern:

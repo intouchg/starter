@@ -84,7 +84,7 @@
 @each $mw in $all-mw {
 	.mw-#{$mw} {
 		@include c-mq(lg) {
-			max-width: map-get($mw-sizes, $mw) !important;
+			max-width: map.get($mw-sizes, $mw) !important;
 		}
 	}
 }
@@ -98,6 +98,7 @@
 	.background-color__#{$name} {
 		background-color: $hex;
 	}
+
 	// Font color
 	.text-#{$name} {
 		color: $hex;
@@ -110,6 +111,7 @@
 			color: $hex;
 		}
 	}
+
 	// SVG color
 	.#{$name}-fill {
 		background-color: $hex;

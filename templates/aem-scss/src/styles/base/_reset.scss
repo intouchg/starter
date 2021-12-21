@@ -1,12 +1,12 @@
-//* Normalize default browser styles to not be bothersome.
-//? Are these the styles we want to override?
+// Normalize default browser styles to not be bothersome.
+// Are these the styles we want to override?
 
 *,
 *::after,
 *::before {
-	margin: 0;
-	padding: 0;
 	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
 }
 
 html {

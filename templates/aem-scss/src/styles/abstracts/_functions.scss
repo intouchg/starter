@@ -7,7 +7,7 @@
 @function dam($file, $base: '/content/dam/mywebsite') {
 	$host: '';
 
-	@if $env== 'development' {
+	@if $env == 'development' {
 		$host: 'https://AEM_PROD_DOMAIN.adobecqms.net';
 	}
 
