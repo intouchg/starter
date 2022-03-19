@@ -344,10 +344,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@intouchg/components@0.2.0-alpha.9":
-  version "0.2.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@intouchg/components/-/components-0.2.0-alpha.9.tgz#6580bc125c38e1f2b4347a971bbbc09484b476f6"
-  integrity sha512-BpO782RULQgQprMJx06YJQagXiL5ms6k5uk6QaqLSzD2TIxyOQJafA6rYShfkJKe5r2nI1zrjkGvxl+iOwua6Q==
+"@intouchg/components@0.2.0-alpha.10":
+  version "0.2.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@intouchg/components/-/components-0.2.0-alpha.10.tgz#37b41b832507eb9f99998d7b42e5655637348ad5"
+  integrity sha512-y1vInzvxq+RGCstDObBpX8URltoXIA3zphm4gbS5ylktjbqVpHHJ/De7TRrHaNmiFI7p8T5bapTea3bgolLK1A==
   dependencies:
     "@intouchg/substate" "0.0.1"
     react "17.0.2"
