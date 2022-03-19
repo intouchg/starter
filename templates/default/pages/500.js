@@ -1,16 +1,16 @@
-import { Stack } from '@intouchg/components'
-
 const ServerError = () => (
-	<Stack
+	<div
 		css={{
-			height: '100vh',
+			display: 'flex',
+			flexDirection: 'column',
 			alignItems: 'center',
 			justifyContent: 'center',
+			height: '100vh',
 		}}
 	>
 		<h1>500</h1>
 		<span>Server error</span>
-	</Stack>
+	</div>
 )
 
 export default ServerError

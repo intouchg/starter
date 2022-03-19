@@ -1,11 +1,11 @@
-import { Stack } from '@intouchg/components'
-
 const DefaultError = ({ statusCode }) => (
-	<Stack
+	<div
 		css={{
-			height: '100vh',
+			display: 'flex',
+			flexDirection: 'column',
 			alignItems: 'center',
 			justifyContent: 'center',
+			height: '100vh',
 		}}
 	>
 		<h1>Error</h1>
@@ -14,7 +14,7 @@ const DefaultError = ({ statusCode }) => (
 				? `An error ${statusCode} occurred on server`
 				: 'An error occurred on client'}
 		</span>
-	</Stack>
+	</div>
 )
 
 DefaultError.getInitialProps = ({ res, err }) => {

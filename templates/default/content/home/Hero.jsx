@@ -1,12 +1,13 @@
-import { Stack } from '@intouchg/components'
 import { useIsMobile } from '@/hooks/useIsMobile'
 
 const Hero = () => {
 	const isMobile = useIsMobile()
 
 	return (
-		<Stack
+		<div
 			css={{
+				display: 'flex',
+				flexDirection: 'column',
 				width: '100%',
 				height: '50vh',
 				alignItems: 'center',
@@ -20,7 +21,7 @@ const Hero = () => {
 					{isMobile ? 'mobile' : 'desktop'}
 				</span>
 			</span>
-		</Stack>
+		</div>
 	)
 }
 

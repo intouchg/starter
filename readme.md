@@ -7,7 +7,7 @@ CLI for creating new apps with the [Intouch Design System](https://ids.intouchg.
 Creates a new app in a newly created directory `project-name`:
 
 ```sh
-npx @intouchg/starter <project-name>
+npx @intouchg/starter@latest <project-name>
 ```
 
 ### Options
@@ -52,6 +52,10 @@ module.exports = {
 	},
 }
 ```
+
+### Updating templates
+
+Updates to templates can simply be pushed to the git repo. A new version of the CLI does not need to be published unless there are updates to the CLI or to the `lib/templates.json` metadata file - such as when new templates are created.
 
 ### Publishing new templates
 
